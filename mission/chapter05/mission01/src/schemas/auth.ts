@@ -1,0 +1,46 @@
+export type CommonResponse<T> = {
+    status: boolean;
+    statusCode: number;
+    message: string;
+    data: T;
+}
+export type RequestSignupDTO = {
+    name: string;
+    email: string;
+    bio?: string;
+    avatar?: string;
+    password: string;
+};
+
+export type ResponseSignupDTO = CommonResponse<{
+    id: number;
+    name: string;
+    email: string;
+    dio: string | null;
+    avatar: string | null;
+    createAt: Date;
+    updateAt: Date;
+}>
+
+export type RequestSigninDto = {
+    email: string;
+    password: string;
+};
+
+export type ResponseSigninDto = CommonResponse<{
+    id: number;
+    name: string;
+    accessToken: string;
+    refreshToken: string;
+}>;
+
+
+export type ResponseMyInfoDto = CommonResponse<{
+    id: number;
+    name: string;
+    email: string;
+    bio: string | null;
+    avatar: string | null;
+    createdAt: Date;
+    updatedAt: Date;
+}>;
