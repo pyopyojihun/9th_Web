@@ -58,11 +58,12 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
         setAccessToken(newAccessToken);
         setRefreshToken(newrefreshToken);
         alert("로그인 성공");
-        window.location.href = "/my";
+        return true;
       }
     } catch (error) {
       console.log(error);
       alert("로그인 실패");
+      return false;
     }
   };
 
@@ -74,7 +75,7 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
 
       setAccessToken(null);
       setRefreshToken(null);
-      
+
       alert("로그아웃됨");
     } catch (error) {
       console.log(error);

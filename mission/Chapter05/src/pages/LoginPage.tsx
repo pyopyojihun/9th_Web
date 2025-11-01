@@ -3,17 +3,10 @@ import { useAuth } from "../context/AuthContext";
 import useForm from "../hooks/useForm";
 import { type UserSigninInformatin, validateSignin } from "../utils/validate";
 import MovePage from "./MovePage";
-import { useEffect } from "react";
 
 const LoginPage = () => {
-  const { login, accessToken } = useAuth();
+  const { login } = useAuth();
   const navigate = useNavigate();
-
-  useEffect(() => {
-    if (accessToken) {
-      navigate("/");
-    }
-  }, [navigate, accessToken]);
 
   const { values, error, touch, getInputProps } = useForm<UserSigninInformatin>(
     {
@@ -23,7 +16,10 @@ const LoginPage = () => {
   );
 
   const handleSubmit = async () => {
-    await login(values);
+    const success = await login(values);
+    if (success) {
+      navigate("/my");
+    }
   };
 
   const handleGoogleLogin = () => {
