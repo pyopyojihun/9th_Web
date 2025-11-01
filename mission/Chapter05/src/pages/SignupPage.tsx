@@ -1,7 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, type SubmitHandler } from "react-hook-form";
 import z from "zod";
-import MovePage from "./MovePage";
+import BackPageButton from "../components/BackPageButton";
 import { postSignup } from "../apis/auth";
 import { useState } from "react";
 import seoro from "../assets/seoro.jpg";
@@ -80,7 +80,7 @@ const SignupPage = () => {
       <div className="flex flex-col gap-3">
         <div className="flex items-center mb-5">
           <div>
-            <MovePage />
+            <BackPageButton />
           </div>
 
           <div className="flex-1 text-center font-semibold text-xl text-white">

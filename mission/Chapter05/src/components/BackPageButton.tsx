@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-export default function MovePage() {
+export default function BackPageButton() {
   const navigate = useNavigate();
 
   const goBack = () => {

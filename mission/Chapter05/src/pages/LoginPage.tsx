@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import useForm from "../hooks/useForm";
 import { type UserSigninInformatin, validateSignin } from "../utils/validate";
-import MovePage from "./MovePage";
+import BackPageButton from "../components/BackPageButton";
 
 const LoginPage = () => {
   const { login } = useAuth();
@@ -36,7 +36,7 @@ const LoginPage = () => {
       <div className="flex flex-col gap-3">
         <div className="flex items-center mb-5">
           <div>
-            <MovePage />
+            <BackPageButton />
           </div>
 
           <div className="flex-1 text-center font-semibold text-xl text-white">
