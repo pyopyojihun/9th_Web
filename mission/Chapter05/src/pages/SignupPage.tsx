@@ -65,8 +65,14 @@ const SignupPage = () => {
       console.log(response);
 
       navigate("/");
-    } catch (error: any) {
-      alert(error.message);
+    } catch (error) {
+      let message = "에러가 발생했습니다.";
+
+      if (error instanceof Error) {
+        message = error.message;
+      }
+
+      alert(message);
     }
   };
   return (
