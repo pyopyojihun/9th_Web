@@ -4,7 +4,6 @@ import { createContext, PropsWithChildren, useState } from "react";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { LOCAL_STORAGE_KEY } from "../constants/keys";
 import { postLogout, postSignin } from "../apis/auth";
-import { useNavigate } from "react-router-dom";
 
 interface AuthContextType {
     accessToken: string | null;
@@ -13,12 +12,7 @@ interface AuthContextType {
     logout: () => Promise<void>;
 }
 
-export const AuthContext = createContext<AuthContextType>({
-    accessToken: null,
-    refreshToken: null,
-    login: async () => { },
-    logout: async () => { },
-});
+export const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: PropsWithChildren) => {
     const {
