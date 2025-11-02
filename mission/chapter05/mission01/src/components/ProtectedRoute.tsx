@@ -7,7 +7,7 @@ interface ProtectedRouteProps {
 
 export default function ProtectedRoute({ children }: ProtectedRouteProps) {
   // localStorage에서 사용자 정보 확인
-  const userStr = localStorage.getItem('user');
+  const userStr = typeof window !== 'undefined' ? localStorage.getItem('user') : null;
   
   // 사용자가 로그인하지 않은 경우 로그인 페이지로 리다이렉트
   if (!userStr) {
