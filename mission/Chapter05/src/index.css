@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+body {
+  background: linear-gradient(135deg, #a5f3fc, #3b82f6, #1e3a8a);
+  overflow: hidden;
+}
