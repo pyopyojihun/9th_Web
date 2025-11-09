@@ -9,8 +9,8 @@ export const useCustomFetch = <T>(
 ): UseQueryResult<NoInfer<T>, Error> => {
   return useQuery<NoInfer<T>, Error>({
     queryKey: [url],
-    queryFn: async (signal) => {
-      const response = await fetch(url,signal);
+    queryFn: async ({signal}) => {
+      const response = await fetch(url,{signal});
       if (!response.ok) throw new Error("Failed to fetch data");
       return response.json() as Promise<T>;
     },
