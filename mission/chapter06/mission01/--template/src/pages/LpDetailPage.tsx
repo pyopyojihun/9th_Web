@@ -1,4 +1,3 @@
-// src/pages/LpDetailPage.tsx
 import { useParams, Link, useNavigate, useLocation } from "react-router-dom";
 import useGetLpDetail from "../hooks/queries/useGetLpDetail";
 import ErrorState from "../components/ErrorState";
