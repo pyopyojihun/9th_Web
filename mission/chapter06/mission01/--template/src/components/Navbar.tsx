@@ -1,4 +1,3 @@
-// src/components/Navbar.tsx
 import { Link, useNavigate } from "react-router-dom";
 import { useAuthUser } from "../hooks/useAuthUser";
 
@@ -20,11 +19,11 @@ export default function Navbar({ onToggleSidebar }: Props) {
         <div className="flex items-center gap-3">
           <button
             type="button"
-            aria-label="메뉴 토글"
+            aria-label="메뉴 열기"
             onClick={onToggleSidebar}
             className="p-1.5 rounded-md hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-neutral-500"
           >
-            {/* 받은 SVG (JSX 속성 camelCase로 수정됨) */}
+            {/* 버거 아이콘 (camelCase 속성) */}
             <svg width="24" height="24" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
               <path
                 fill="none"
@@ -81,8 +80,15 @@ export default function Navbar({ onToggleSidebar }: Props) {
             </>
           ) : (
             <>
-              <Link to="/login" className="text-neutral-100 hover:text-white">로그인</Link>
-              <Link to="/signup" className="px-3 py-1.5 rounded-md bg-pink-500 text-white hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-pink-400">회원가입</Link>
+              <Link to="/login" className="text-neutral-100 hover:text-white">
+                로그인
+              </Link>
+              <Link
+                to="/signup"
+                className="px-3 py-1.5 rounded-md bg-pink-500 text-white hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-pink-400"
+              >
+                회원가입
+              </Link>
             </>
           )}
         </nav>
